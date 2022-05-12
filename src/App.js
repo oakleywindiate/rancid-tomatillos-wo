@@ -13,6 +13,10 @@ class App extends Component {
     }
   }
 
+seeMovieDetails = (id) => {
+  const movieDetails = this.state.movieData.movies.filter(movie => movie.id === id)
+}
+
   render() {
     return (
       <main className="App">
