@@ -8,6 +8,7 @@ const Tile = ({ title, posterPath, averageRating, releaseDate }) => {
       <img src={posterPath} />
       <p>Average Rating: {averageRating}</p>
       <p>Release Date: {releaseDate}</p>
+      <button>Click here to see details!</button>
     </div>
   )
 }
