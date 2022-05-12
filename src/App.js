@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Movies from './Movies';
+import Tile from './Tile';
 import './App.css';
+import movieData from './movieData'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      movieData
+    }
+  }
+
+  render() {
+    return (
+      <main className="App">
+        <header className="App-header">
+          <h1 className="title">Rancid Tomatillos</h1>
+          <p>
+          </p>
+          <Movies movieData={this.state.movieData} />
+        </header>
+      </main>
+    );
+  }
 }
 
 export default App;
