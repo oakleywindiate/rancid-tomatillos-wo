@@ -6,8 +6,11 @@ const Movies = ({movieData}) => {
   const movieTile = movieData.movies.map(movie => {
     return (
       <Tile
-      title={movie.title}
       key={movie.id}
+      title={movie.title}
+      posterPath={movie.poster_path}
+      averageRating={movie.average_rating}
+      releaseDate={movie.release_date}
       />
     )
   })
