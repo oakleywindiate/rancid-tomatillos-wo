@@ -11,13 +11,14 @@ class App extends Component {
     super();
     this.state = {
       movieData: movieData,
-      movieDetails: {}
+      movieDetails: 0
     }
   }
 
 seeMovieDetails = (id) => {
   const movieDetails = this.state.movieData.movies.filter(movie => movie.id === id)
-  this.setState({ movieData: id });
+  console.log(movieDetails)
+  this.setState({ movieDetails: movieDetails });
 }
 
   render() {
@@ -27,8 +28,8 @@ seeMovieDetails = (id) => {
           <h1 className="title">Rancid Tomatillos</h1>
           <p>
           </p>
-          <Movies movieData={this.state.movieData} seeMovieDetails={this.seeMovieDetails} />
-          <Details movieDetails={this.state.moveDetails} seeMovieDetails={this.seeMovieDetails} />
+          {!this.state.movieDetails && <Movies movieData={this.state.movieData} seeMovieDetails={this.seeMovieDetails} />}
+          <Details movieDetails={this.state.movieDetails} seeMovieDetails={this.seeMovieDetails} />
         </header>
       </main>
     );

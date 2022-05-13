@@ -3,29 +3,29 @@ import Tile from './Tile'
 import './Details.css';
 
 class Details extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       movieDetails: {}
     }
   }
 
-handleChange = event => {
-  this.setState({ [event.target.name]: event.target.value });
-}
-
-findMovie = event => {
-    event.preventDefault();
-    const newMovie = {
-      id: Date.now(),
-      ...this.state
-    }
-    this.props.seeMovieDetails();
-  }
+// handleChange = event => {
+//   this.setState({ [event.target.name]: event.target.value });
+// }
+//
+// findMovie = event => {
+//     event.preventDefault();
+//     const newMovie = {
+//       id: Date.now(),
+//       ...this.state
+//     }
+//     this.props.seeMovieDetails();
+//   }
 
   render() {
     return (
-      <div className='tile'
+      <div className='detailsTile'
       onChange={event => this.handleChange(event)}>
       </div>
     )
