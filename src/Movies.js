@@ -2,7 +2,7 @@ import React from 'react';
 import Tile from './Tile'
 import './Movies.css';
 
-const Movies = ({ movieData, seeMovieDetails }) => {
+const Movies = ({ movieData, seeMovieDetails, seeAllMovies}) => {
 
   const movieTile = movieData.movies.map(movie => {
     return (

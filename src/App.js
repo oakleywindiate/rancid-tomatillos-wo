@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Movies from './Movies';
 import Tile from './Tile';
+import DetailTile from './DetailTile';
 import Details from './Details'
 import './App.css';
 import movieData from './movieData'
@@ -11,16 +12,19 @@ class App extends Component {
     super();
     this.state = {
       movieData: movieData,
-      movieDetails: 0
+      movieDetails: ""
     }
   }
 
 seeMovieDetails = (id) => {
   const movieDetails = this.state.movieData.movies.find(movie => movie.id === id)
-
-  console.log(movieDetails)
-
   this.setState({ movieDetails: movieDetails });
+}
+
+seeAllMovies = () => {
+  this.setState({ movieData: movieData });
+  this.setState({movieDetails: ""})
+console.log("HERE");
 }
 
   render() {
@@ -31,7 +35,8 @@ seeMovieDetails = (id) => {
           <p>
           </p>
           {!this.state.movieDetails && <Movies movieData={this.state.movieData} seeMovieDetails={this.seeMovieDetails} />}
-          <Details movieDetails={this.state.movieDetails} seeMovieDetails={this.seeMovieDetails} />
+          {this.state.movieDetails && <Details movieDetails={this.state.movieDetails} seeAllMovies={this.seeAllMovies} />}
+
         </header>
       </main>
     );
