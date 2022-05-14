@@ -1,12 +1,12 @@
 import React from 'react';
-import './Tile.css';
+import './DetailTile.css';
 
 const DetailTile = ({ title, posterPath, averageRating, releaseDate, id, seeAllMovies }) => {
   return (
     <div className='detail-tile'>
-      <h3>{title}</h3>
       <img src={posterPath} />
-      <p>Average Rating: {averageRating}</p>
+      <h3>{title}</h3>
+      <p>Average Rating: {averageRating.toFixed(2)}</p>
       <p>Release Date: {releaseDate}</p>
       <button className="go-back" onClick={() => seeAllMovies()}>Go Back to All Movies</button>
     </div>

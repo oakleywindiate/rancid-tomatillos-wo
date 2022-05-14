@@ -1,0 +1,10 @@
+.go-back {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-style: none;
+}
