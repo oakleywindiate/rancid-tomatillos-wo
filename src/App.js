@@ -16,8 +16,10 @@ class App extends Component {
   }
 
 seeMovieDetails = (id) => {
-  const movieDetails = this.state.movieData.movies.filter(movie => movie.id === id)
+  const movieDetails = this.state.movieData.movies.find(movie => movie.id === id)
+
   console.log(movieDetails)
+
   this.setState({ movieDetails: movieDetails });
 }
 
