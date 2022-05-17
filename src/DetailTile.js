@@ -14,7 +14,7 @@ const DetailTile = (props) => {
       <p>Revenue: ${props.movieDetails.revenue}</p>
       <p>Runtime: {props.movieDetails.runtime} minutes</p>
       <p>{props.movieDetails.tagline}</p>
-      <button className="go-back" onClick={() => props.movieDetails.seeAllMovies()}>Go Back to All Movies</button>
+      <button className="go-back" onClick={() => props.seeAllMovies()}>Go Back to All Movies</button>
     </div>
   )
 }
