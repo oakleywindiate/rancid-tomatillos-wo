@@ -4,28 +4,34 @@ import Tile from './Tile';
 import DetailTile from './DetailTile';
 import Details from './Details'
 import './App.css';
-import movieData from './movieData'
+import { fetchAllMovies, fetchMovieDetails } from './apiCalls'
 
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      movieData: movieData,
-      movieDetails: ""
+      movieData: [],
+      movieDetails: "",
+      error: ""
     }
   }
 
-seeMovieDetails = (id) => {
-  const movieDetails = this.state.movieData.movies.find(movie => movie.id === id)
-  this.setState({ movieDetails: movieDetails });
-}
+  componentDidMount = () => {
+    fetchAllMovies()
+    .then(data => this.setState({ movieData: data.movies }))
+    .catch(err => this.setState({ error: "Something went wrong, please try again!"}))
+  }
 
-seeAllMovies = () => {
-  this.setState({ movieData: movieData });
-  this.setState({movieDetails: ""})
-console.log("HERE");
-}
+  seeMovieDetails = (id) => {
+    fetchMovieDetails(id)
+    .then(data => this.setState({ movieDetails: data.movie }))
+    .catch(err => this.setState({ error: "Something went wrong, please try again!"}))
+  }
+
+  seeAllMovies = () => {
+    this.setState({ movieDetails: "" })
+  }
 
   render() {
     return (
@@ -35,8 +41,9 @@ console.log("HERE");
           <p>
           </p>
           {!this.state.movieDetails && <Movies movieData={this.state.movieData} seeMovieDetails={this.seeMovieDetails} />}
-          {this.state.movieDetails && <Details movieDetails={this.state.movieDetails} seeAllMovies={this.seeAllMovies} />}
-
+          {this.state.movieDetails && <DetailTile
+             movieDetails={this.state.movieDetails} seeAllMovies={this.seeAllMovies} />}
+          {this.state.error.length > 0 && <h2 className="error">{this.state.error}</h2>}
         </header>
       </main>
     );
