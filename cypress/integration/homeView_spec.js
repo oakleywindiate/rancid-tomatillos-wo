@@ -1,8 +1,10 @@
 describe('Rancid Tomatillos home page view', () => {
 
   beforeEach(() => {
-    cy.visit('http://localhost:3000');
-  });
+    cy.visit('http://localhost:3000')
+    cy.intercept("GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movieData.json' }
+  )}
+);
 
   it('Should display all movies', () => {
     cy.get('h1')
@@ -13,6 +15,7 @@ describe('Rancid Tomatillos home page view', () => {
 
   it('Can show the details of one movie', () => {
     cy.contains('Click here to see details!').click()
+    cy.intercept("GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', { fixture: 'movie.json' })
     cy.get('div.detail-tile')
       .should('exist')
       .should('have.length', 1)
