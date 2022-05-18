@@ -5,7 +5,7 @@ import DetailTile from './DetailTile';
 import Details from './Details'
 import './App.css';
 import { fetchAllMovies, fetchMovieDetails } from './apiCalls'
-import { Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 
 
 
@@ -27,12 +27,14 @@ class App extends Component {
 
   seeMovieDetails = (id) => {
     fetchMovieDetails(id)
-    .then(data => this.setState({ movieDetails: data.movie }))
+    .then(data => this.setState({ movieDetails: data.movie, movieData: [] }))
     .catch(err => this.setState({ error: "Something went wrong, please try again!"}))
   }
 
   seeAllMovies = () => {
-    this.setState({ movieDetails: "" })
+    fetchAllMovies()
+    .then(data => this.setState({ movieData: data.movies, movieDetails: "" }))
+    .catch(err => this.setState({ error: "Something went wrong, please try again!"}))
   }
 
   render() {
@@ -40,23 +42,21 @@ class App extends Component {
       <main className="App">
         <header className="App-header">
           <h1 className="title">Rancid Tomatillos</h1>
-
-          // {!this.state.movieDetails && <Movies movieData={this.state.movieData} seeMovieDetails={this.seeMovieDetails} />}
-          {this.state.movieDetails && <DetailTile
-             movieDetails={this.state.movieDetails} seeAllMovies={this.seeAllMovies} />}
-          {this.state.error.length > 0 && <h2 className="error">{this.state.error}</h2>}
-
-          <Route exact path='/' render={ () => <Movies movieData={this.state.movieData} seeMovieDetails={this.seeMovieDetails} /> }/>
-
-          <Route exact path="/movies/:id"
-          render={({ match }) => { const movieToRender = this.state.movieData.find(movie => movie.id === parseInt(match.params.id));
-            console.log(match.params.id);
-            return <movieDetails {...movieToRender} />
-          }}
-          />
+          <Switch>
+            <Route path="/" render={ () =>
+              <Movies
+              movieData={this.state.movieData} seeMovieDetails={this.seeMovieDetails}
+              />
+            }/>
+              <Route path="/movie/:id" render={() =>
+                <DetailTile
+                movieDetails={this.state.movieDetails} seeAllMovies={this.seeAllMovies}
+                />
+              }/>
+            <Route path="/" render={({ match }) => { console.log(match)}} />
+          </Switch>
           </header>
-
-          </main>
+        </main>
     );
   }
 }

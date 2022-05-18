@@ -1,5 +1,6 @@
 import React from 'react';
 import './DetailTile.css';
+import { Route, Link, Redirect } from 'react-router-dom';
 
 const DetailTile = (props) => {
   return (
@@ -14,7 +15,10 @@ const DetailTile = (props) => {
       <p>Revenue: ${props.movieDetails.revenue}</p>
       <p>Runtime: {props.movieDetails.runtime} minutes</p>
       <p>{props.movieDetails.tagline}</p>
-      <button className="go-back" onClick={() => props.movieDetails.seeAllMovies()}>Go Back to All Movies</button>
+      <Link to="/">
+        <button className="go-back" onClick={() => props.seeAllMovies()}>Go Back to All Movies
+        </button>
+      </Link>
     </div>
   )
 }
