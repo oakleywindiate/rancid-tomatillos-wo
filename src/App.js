@@ -5,6 +5,8 @@ import DetailTile from './DetailTile';
 import Details from './Details'
 import './App.css';
 import { fetchAllMovies, fetchMovieDetails } from './apiCalls'
+import { BrowserRouter, Route, Link, Switch} from 'react-router-dom';
+
 
 
 class App extends Component {
@@ -12,7 +14,6 @@ class App extends Component {
     super();
     this.state = {
       movieData: [],
-      movieDetails: "",
       error: ""
     }
   }
@@ -23,29 +24,27 @@ class App extends Component {
     .catch(err => this.setState({ error: "Something went wrong, please try again!"}))
   }
 
-  seeMovieDetails = (id) => {
-    fetchMovieDetails(id)
-    .then(data => this.setState({ movieDetails: data.movie }))
-    .catch(err => this.setState({ error: "Something went wrong, please try again!"}))
-  }
-
-  seeAllMovies = () => {
-    this.setState({ movieDetails: "" })
-  }
-
   render() {
     return (
       <main className="App">
         <header className="App-header">
           <h1 className="title">Rancid Tomatillos</h1>
-          <p>
-          </p>
-          {!this.state.movieDetails && <Movies movieData={this.state.movieData} seeMovieDetails={this.seeMovieDetails} />}
-          {this.state.movieDetails && <DetailTile
-             movieDetails={this.state.movieDetails} seeAllMovies={this.seeAllMovies} />}
-          {this.state.error.length > 0 && <h2 className="error">{this.state.error}</h2>}
-        </header>
-      </main>
+          <Switch>
+            <Route exact path="/" render={ () =>
+              <Movies
+              movieData={this.state.movieData}
+              seeMovieDetails={this.seeMovieDetails}
+              />
+            }/>
+            <Route exact path="/movie/:id" render={({ match }) =>
+              <DetailTile
+              seeMovieDetails={this.seeMovieDetails}
+              idMatch={parseInt(match.params.id)}
+              />
+            }/>
+          </Switch>
+          </header>
+        </main>
     );
   }
 }
