@@ -10,7 +10,7 @@ const Tile = ({ title, posterPath, averageRating, releaseDate, id, seeMovieDetai
       <p>Average Rating: {averageRating.toFixed(2)}</p>
       <p>Release Date: {releaseDate}</p>
       <Link to={`/movie/${id}`}>
-        <button className="details-button" onClick={() => seeMovieDetails(id)}>Click here to see details!
+        <button className="details-button">Click here to see details!
         </button>
       </Link>
     </div>
