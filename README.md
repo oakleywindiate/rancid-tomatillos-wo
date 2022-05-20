@@ -1,70 +1,56 @@
-# Getting Started with Create React App Ititial Commit Edit!
+# Rancid Tomatilos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+*overview here*
 
-In the project directory, you can run:
+## Project Motivation
 
-### `npm start`
+The Rancid Tomatillos project teaches developers how to create interactive and functional web pages using React. *insert something about Cypress?*
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+***
+## Project Information
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Technologies Used
+* React
+* Cypress
+* HTML
+* CSS
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
+1. To run this project, use the Webpack Starter Kit repo found [here](https://github.com/turingschool-examples/webpack-starter-kit)
+2. Install the appropriate technologies (Mocha/Chai)
+3. `cd` into project
+4. Run `npm install` to install project dependencies
+5. Run `npm start` in the terminal and on your local server
+6. To view your webpage, use the local host address provided
+7. Next, clone the API's [here](https://github.com/turingschool-examples/overlook-api)
+8. `cd` into API
+9. Run `npm install` to install API dependencies
+10. Run `npm start` in the terminal
+11. To stop the local server from running in your terminal use `command` + `c`
 
-### `npm run build`
+### Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Display all available movies
+*insert more*
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Code Sample
+The following is one example of code in this project:
+```javascript
 
-### `npm run eject`
+```
+***
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Development Team
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* [Oakley Windiate](https://github.com/oakleywindiate)
+* [Whitney Perricone]
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Credits
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This project was created by Turing School of Software and Design, a Colorado Non-Profit Organization.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Interested in learning more about Turing? [click here](https://turing.edu/)
