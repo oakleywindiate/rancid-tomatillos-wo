@@ -9,7 +9,7 @@ class DetailTile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movieDetails: ""
+      movieDetails: {}
     }
   }
 
@@ -51,5 +51,7 @@ class DetailTile extends Component {
     );
   }
 }
+
+
 
 export default DetailTile;
