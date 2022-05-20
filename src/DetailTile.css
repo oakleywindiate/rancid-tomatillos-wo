@@ -3,8 +3,36 @@
   font-size: 20px;
   background-color: black;
   color: white;
-  border-radius: 25px;
+  border-radius: 15px;
   padding: 1em;
   margin-bottom: 1em;
   border-style: none;
+}
+
+.detail-tile {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-details-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.movie-image {
+  width: 30%;
+  height: 30%;
+  padding-top: 5%;
+  padding-left: 5%;
+}
+
+.movie-information {
+  width: 60%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  font-size: 20px;
+}
+
+.backdrop-section {
 }
