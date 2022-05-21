@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { fetchAllMovies, fetchMovieDetails } from './apiCalls';
 import { Route, Link, Redirect } from 'react-router-dom';
 import './Form.css';
+import Movies from './Movies';
 
 class Form extends Component {
   constructor() {
@@ -9,9 +10,8 @@ class Form extends Component {
     this.state = {
       movieData: [],
       searchedMoviesResult: [],
-      search: ''
-
-
+      search: "",
+      error: ""
     }
   }
 
@@ -21,31 +21,16 @@ class Form extends Component {
     .catch(err => this.setState({ error: "That search did not match any movies, please try again!"}))
   }
 
+
   handleChange = event => {
-    console.log("PEAR", event);
-     this.setState({ search: event.target.value });
-     this.searchForMovie(event.target.value)
+    const value = event.target.value
+    const searchResult = this.state.movieData.filter(movie => {
+      if (movie.title.toLowerCase().includes(value.toLowerCase())) {
+        return movie
+      } 
+    })
+    this.setState({ searchedMoviesResult: searchResult, search: value })
    }
-
-   searchForMovie = (value) => {
-     console.log("THERE", value);
-     const searchResult = this.state.movieData.filter(movie => {
-       if(movie.title.includes(value)) {
-         // console.log("POPP", movie);
-       return movie
-       }
-     })
-     this.setState({ searchedMoviesResult: searchResult })
-     this.setState({movieData: []})
-   }
-
-   submitIdea = event => {
-     console.log("BANANA", event);
-  event.preventDefault();
-this.searchForMovie(event.target.value)
-  // this.props.searchForMovie(value);
-  // this.clearInputs();
-}
 
   render() {
     return (
@@ -57,9 +42,13 @@ this.searchForMovie(event.target.value)
           value={this.state.search}
           onChange={event => this.handleChange(event)}
         />
-
-        <button onClick={event => this.submitIdea(event)}>Search</button>
-
+        <Route exact path="/" render={ () =>
+          <Movies
+          movieData={this.state.searchedMoviesResult}
+          seeMovieDetails={this.seeMovieDetails}
+          />
+        }/>
+        <p className="error-message"></p>
       </form>
     )
   }
