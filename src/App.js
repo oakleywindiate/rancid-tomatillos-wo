@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Movies from './Movies';
+import Form from './Form';
 import Tile from './Tile';
 import DetailTile from './DetailTile';
 import Details from './Details'
+import SearchMovies from './SearchMovies';
 import './App.css';
 import { fetchAllMovies, fetchMovieDetails } from './apiCalls'
-import { BrowserRouter, Route, Link, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Link, Switch, NavLink} from 'react-router-dom';
 
 
 
@@ -14,7 +16,7 @@ class App extends Component {
     super();
     this.state = {
       movieData: [],
-      error: ""
+      error: "",
     }
   }
 
@@ -24,12 +26,21 @@ class App extends Component {
     .catch(err => this.setState({ error: "Something went wrong, please try again!"}))
   }
 
+
+
+
+
   render() {
     return (
       <main className="App">
         <header className="App-header">
           <h1 className="title">Rancid Tomatillos</h1>
-          <Switch>
+          <Route exact path="/" render={ () =>
+            <Form
+            searchedMoviesResult={this.state.searchedMoviesResult}
+            seeMovieDetails={this.seeMovieDetails}
+            />
+          }/>
             <Route exact path="/" render={ () =>
               <Movies
               movieData={this.state.movieData}
@@ -42,7 +53,6 @@ class App extends Component {
               idMatch={parseInt(match.params.id)}
               />
             }/>
-          </Switch>
           </header>
         </main>
     );

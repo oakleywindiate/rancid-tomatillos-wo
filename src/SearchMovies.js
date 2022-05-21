@@ -1,10 +1,9 @@
 import React from 'react';
-import Tile from './Tile'
-import './Movies.css';
+import Tile from './Tile';
+import Form from './Form'
 
-const Movies = ({ movieData, seeMovieDetails }) => {
-
-  const movieTile = movieData.map(movie => {
+const SearchMovies = ({ searchedMoviesResult, seeMovieDetails }) => {
+  const movieTile = searchedMoviesResult.map(movie => {
     return (
       <Tile
       id={movie.id}
@@ -19,10 +18,11 @@ const Movies = ({ movieData, seeMovieDetails }) => {
   })
 
   return (
-    <div className='movies-container'>
+    <div className='movies-search'>
     {movieTile}
     </div>
   )
 }
 
-export default Movies;
+
+export default SearchMovies

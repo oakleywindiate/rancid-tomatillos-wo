@@ -24,7 +24,7 @@ describe('Rancid Tomatillos movie detail view', () => {
         }
       },
     )
-    cy.get('div.detail-tile')
+    cy.get('section.detail-tile')
       .should('exist')
       .should('have.length', 1)
     cy.get('h3')
