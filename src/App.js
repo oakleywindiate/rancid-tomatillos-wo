@@ -7,7 +7,7 @@ import Details from './Details'
 import SearchMovies from './SearchMovies';
 import './App.css';
 import { fetchAllMovies, fetchMovieDetails } from './apiCalls'
-import { BrowserRouter, Route, Link, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Link, Switch, NavLink} from 'react-router-dom';
 
 
 
@@ -17,7 +17,6 @@ class App extends Component {
     this.state = {
       movieData: [],
       error: "",
-      searchedMoviesResult: []
     }
   }
 
@@ -37,7 +36,8 @@ class App extends Component {
         <header className="App-header">
           <h1 className="title">Rancid Tomatillos</h1>
           <Route exact path="/" render={ () =>
-            <Form  searchedMoviesResult={this.state.searchedMoviesResult}
+            <Form
+            searchedMoviesResult={this.state.searchedMoviesResult}
             seeMovieDetails={this.seeMovieDetails}
             />
           }/>
