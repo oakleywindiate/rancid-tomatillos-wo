@@ -39,7 +39,7 @@ class Form extends Component {
 
   render() {
     return (
-      <form>
+      <form className='search-form'>
         <input
           type='text'
           placeholder='Search for Movies Here'
