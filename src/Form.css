@@ -9,3 +9,14 @@ input {
   border: 2px solid black;
   font-size: 18px;
 }
+
+
+.navLink {
+  text-decoration: none;
+  cursor: default;
+}
+
+.error-tag {
+  pointer-events: none;
+  color: white;
+}
