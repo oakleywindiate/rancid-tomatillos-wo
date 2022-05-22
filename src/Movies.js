@@ -2,7 +2,7 @@ import React from 'react';
 import Tile from './Tile'
 import './Movies.css';
 
-const Movies = ({ movieData, seeMovieDetails }) => {
+const Movies = ({ movieData, seeMovieDetails, clearSearch }) => {
 
   const movieTile = movieData.map(movie => {
     return (
@@ -14,6 +14,7 @@ const Movies = ({ movieData, seeMovieDetails }) => {
       averageRating={movie.average_rating}
       releaseDate={movie.release_date}
       seeMovieDetails={seeMovieDetails}
+      clearSearch={clearSearch}
       />
     )
   })
