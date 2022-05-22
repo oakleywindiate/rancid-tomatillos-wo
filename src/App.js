@@ -3,7 +3,6 @@ import Movies from './Movies';
 import Form from './Form';
 import Tile from './Tile';
 import DetailTile from './DetailTile';
-import Details from './Details'
 import SearchMovies from './SearchMovies';
 import './App.css';
 import { fetchAllMovies, fetchMovieDetails } from './apiCalls'
@@ -35,12 +34,15 @@ class App extends Component {
       <main className="App">
         <header className="App-header">
           <h1 className="title">Rancid Tomatillos</h1>
-          <Route exact path="/" render={ () =>
+          <Link to="/search">
+          <Route exact path={"/search" | "/"} render={ () =>
             <Form
             searchedMoviesResult={this.state.searchedMoviesResult}
             seeMovieDetails={this.seeMovieDetails}
             />
           }/>
+          </Link>
+        </header>
             <Route exact path="/" render={ () =>
               <Movies
               movieData={this.state.movieData}
@@ -53,7 +55,6 @@ class App extends Component {
               idMatch={parseInt(match.params.id)}
               />
             }/>
-          </header>
         </main>
     );
   }
