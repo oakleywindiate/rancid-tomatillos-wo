@@ -3,4 +3,6 @@
   display: flex;
   flex-wrap: wrap;
   grid-gap: 20px;
+  background-color: #282c34;
+  color: white; 
 }

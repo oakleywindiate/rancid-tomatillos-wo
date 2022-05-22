@@ -2,7 +2,7 @@ import React from 'react';
 import './Tile.css';
 import { Route, Link } from 'react-router-dom';
 
-const Tile = ({ title, posterPath, averageRating, releaseDate, id, seeMovieDetails, seeAllMovies }) => {
+const Tile = ({ title, posterPath, averageRating, releaseDate, id, seeMovieDetails, seeAllMovies, clearSearch }) => {
   return (
     <div className='tile'>
       <img src={posterPath} />
@@ -10,7 +10,7 @@ const Tile = ({ title, posterPath, averageRating, releaseDate, id, seeMovieDetai
       <p>Average Rating: {averageRating.toFixed(2)}</p>
       <p>Release Date: {releaseDate}</p>
       <Link to={`/movie/${id}`}>
-        <button className="details-button">Click here to see details!
+        <button onClick={clearSearch} className="details-button">Click here to see details!
         </button>
       </Link>
     </div>

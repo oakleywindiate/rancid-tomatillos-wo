@@ -27,10 +27,15 @@ class Form extends Component {
     const searchResult = this.state.movieData.filter(movie => {
       if (movie.title.toLowerCase().includes(value.toLowerCase())) {
         return movie
-      } 
+      }
     })
     this.setState({ searchedMoviesResult: searchResult, search: value })
    }
+
+   clearSearch = () => {
+     this.setState({ searchedMoviesResult: [], search: ""})
+   }
+
 
   render() {
     return (
@@ -42,10 +47,11 @@ class Form extends Component {
           value={this.state.search}
           onChange={event => this.handleChange(event)}
         />
-        <Route exact path="/" render={ () =>
+        <Route exact path={"/" | "/search"} render={ () =>
           <Movies
           movieData={this.state.searchedMoviesResult}
           seeMovieDetails={this.seeMovieDetails}
+          clearSearch={this.clearSearch}
           />
         }/>
         <p className="error-message"></p>

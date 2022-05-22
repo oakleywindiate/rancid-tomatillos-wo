@@ -15,6 +15,7 @@ class DetailTile extends Component {
 
   componentDidMount = (id) => {
    this.seeMovieDetails(this.props.idMatch)
+
   }
 
   seeMovieDetails = (id) => {
@@ -23,22 +24,24 @@ class DetailTile extends Component {
     .catch(err => this.setState({ error: "Something went wrong, please try again!"}))
   }
 
+
   render() {
+
     return (
       <section className='detail-tile'>
-        <div class="backdrop-section">
-          <img class="backdrop" src={this.state.movieDetails.backdrop_path} />
+        <div className="backdrop-section">
+          <img className="backdrop" src={this.state.movieDetails.backdrop_path} />
         </div>
-        <div class="movie-details-section">
-          <img class="movie-image" src={this.state.movieDetails.poster_path} />
-          <div class="movie-information">
+        <div className="movie-details-section">
+          <img className="movie-image" src={this.state.movieDetails.poster_path} />
+          <div className="movie-information">
             <h3>{this.state.movieDetails.title}</h3>
             <p>Average Rating: {this.state.movieDetails.average_rating}</p>
             <p>Release Date: {this.state.movieDetails.release_date}</p>
             <p>{this.state.movieDetails.overview}</p>
             <p>Genres:{this.state.movieDetails.genres}</p>
-            <p>Budget: ${this.state.movieDetails.budget}</p>
-            <p>Revenue: ${this.state.movieDetails.revenue}</p>
+            <p>Budget: {this.state.movieDetails.budget, new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(this.state.movieDetails.budget)}</p>
+            <p>Revenue: {this.state.movieDetails.revenue, new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(this.state.movieDetails.revenue)}</p>
             <p>Runtime: {this.state.movieDetails.runtime} minutes</p>
             <p>{this.state.movieDetails.tagline}</p>
           </div>
