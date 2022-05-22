@@ -29,7 +29,11 @@ class Form extends Component {
         return movie
       }
     })
-    this.setState({ searchedMoviesResult: searchResult, search: value })
+      if (searchResult.length > 0) {
+        this.setState({ searchedMoviesResult: searchResult, search: value, error: "" })
+      } else {
+        this.setState({ searchedMoviesResult: searchResult, search: value, error: "That search did not match any movies, please try again!"})
+      }
    }
 
    clearSearch = () => {
@@ -54,7 +58,9 @@ class Form extends Component {
           clearSearch={this.clearSearch}
           />
         }/>
-        <p className="error-message"></p>
+        <p className="error-tag">
+        {this.state.error}
+        </p>
       </form>
     )
   }
