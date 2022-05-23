@@ -16,7 +16,7 @@ describe('Rancid Tomatillos home page view', () => {
 
   it('Should display all movies', () => {
     cy.get('h1')
-      .should('have.text', 'Rancid Tomatillos')
+      .should('have.text', 'RANCID TOMATILLOS')
     cy.get('div.movies-container').children()
       .should('have.length', 40)
   });
