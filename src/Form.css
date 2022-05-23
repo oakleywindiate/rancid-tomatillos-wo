@@ -10,7 +10,6 @@ input {
   font-size: 18px;
 }
 
-
 .navLink {
   text-decoration: none;
   cursor: default;
@@ -19,4 +18,16 @@ input {
 .error-tag {
   pointer-events: none;
   color: white;
+}
+
+input {
+  outline: 0;
+  background-color: #000000;
+  border-width: 0 0 2px;
+  border-color: #fff;
+  color: #fff;
+}
+input:focus {
+  border-color: #fff;
+  color: #fff;
 }

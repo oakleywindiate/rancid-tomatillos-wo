@@ -24,13 +24,13 @@ class App extends Component {
     .then(data => this.setState({ movieData: data.movies }))
     .catch(err => this.setState({ error: "Something went wrong, please try again!"}))
   }
-  
+
 
   render() {
     return (
       <main className="App">
         <header className="App-header">
-          <h1 className="title">Rancid Tomatillos</h1>
+          <h1 className="title">RANCID TOMATILLOS</h1>
           <NavLink className="navLink" to="/search">
           <Route exact path={"/search" | "/"} render={ () =>
             <Form
