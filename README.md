@@ -44,7 +44,7 @@ Gif #3- Search a movie both in the database and one that is not to show error me
 ### Development Team
 
 * [Oakley Windiate](https://github.com/oakleywindiate)
-* [Whitney Perricone] (https://github.com/Wperricone)
+* [Whitney Perricone](https://github.com/Wperricone)
 
 ### Credits
 
