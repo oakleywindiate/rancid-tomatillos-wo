@@ -5,9 +5,18 @@ form {
 input {
   margin: 5px;
   width: 190px;
-
   border: 2px solid black;
   font-size: 18px;
+  outline: 0;
+  background-color: #000;
+  border-width: 0 0 2px;
+  border-color: #FFF;
+  color: #FFF;
+}
+
+input:focus {
+  border-color: #FFF;
+  color: #FFF;
 }
 
 .navLink {
@@ -17,17 +26,5 @@ input {
 
 .error-tag {
   pointer-events: none;
-  color: white;
-}
-
-input {
-  outline: 0;
-  background-color: #000000;
-  border-width: 0 0 2px;
-  border-color: #fff;
-  color: #fff;
-}
-input:focus {
-  border-color: #fff;
-  color: #fff;
+  color: #FFF;
 }

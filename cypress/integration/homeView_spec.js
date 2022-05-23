@@ -20,6 +20,4 @@ describe('Rancid Tomatillos home page view', () => {
     cy.get('div.movies-container').children()
       .should('have.length', 40)
   });
-
-
 });

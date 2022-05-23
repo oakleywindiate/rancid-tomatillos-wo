@@ -10,17 +10,17 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #FFF;
 }
 
 .title {
   font-family: 'Codystar', cursive;
   color: #fff;
   text-shadow:
-    0 0 2px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
-    0 0 42px #fff,
+    0 0 2px #FFF,
+    0 0 10px #FFF,
+    0 0 21px #FFF,
+    0 0 42px #FFF,
     0 0 82px #D48A0D,
     0 0 92px #D48A0D,
     0 0 102px #D48A0D,

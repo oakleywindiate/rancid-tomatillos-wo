@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './DetailTile.css';
-import { Route, Link, Redirect } from 'react-router-dom';
-// import Details from './Details';
+import { Link } from 'react-router-dom';
 import { fetchAllMovies, fetchMovieDetails } from './apiCalls';
 
 
@@ -11,28 +10,25 @@ class DetailTile extends Component {
     this.state = {
       movieDetails: {}
     }
-  }
+  };
 
   componentDidMount = (id) => {
    this.seeMovieDetails(this.props.idMatch)
-
-  }
+ };
 
   seeMovieDetails = (id) => {
     fetchMovieDetails(id)
     .then(data => this.setState({ movieDetails: data.movie }))
-    .catch(err => this.setState({ error: "Something went wrong, please try again!"}))
-  }
-
+    .catch(err => this.setState({ error: "Something went wrong, please try again!" }))
+  };
 
   render() {
-
     return (
       <section className='detail-tile'>
         <div className="backdrop-section">
           <img className="backdrop" src={this.state.movieDetails.backdrop_path} alt="back-drop-image"/>
         </div>
-        <div className="movie-details-section">
+        <section className="movie-details-section">
           <img className="movie-image" src={this.state.movieDetails.poster_path} alt="main-poster-image"/>
           <div className="movie-information">
             <h3 className="movie-detail-title">{this.state.movieDetails.title}</h3>
@@ -53,11 +49,11 @@ class DetailTile extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </section>
     );
-  }
-}
+  };
+};
 
 
 
