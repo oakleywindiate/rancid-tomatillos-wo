@@ -3,7 +3,6 @@ import Tile from './Tile'
 import './Movies.css';
 
 const Movies = ({ movieData, seeMovieDetails, clearSearch }) => {
-
   const movieTile = movieData.map(movie => {
     return (
       <Tile
@@ -24,6 +23,6 @@ const Movies = ({ movieData, seeMovieDetails, clearSearch }) => {
     {movieTile}
     </div>
   )
-}
+};
 
 export default Movies;

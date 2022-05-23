@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { fetchAllMovies, fetchMovieDetails } from './apiCalls';
-import { Route, Link, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import './Form.css';
 import Movies from './Movies';
 
@@ -13,14 +13,13 @@ class Form extends Component {
       search: "",
       error: ""
     }
-  }
+  };
 
   componentDidMount = () => {
     fetchAllMovies()
     .then(data => this.setState({ movieData: data.movies }))
-    .catch(err => this.setState({ error: "That search did not match any movies, please try again!"}))
-  }
-
+    .catch(err => this.setState({ error: "That search did not match any movies, please try again!" }))
+  };
 
   handleChange = event => {
     const value = event.target.value
@@ -34,12 +33,11 @@ class Form extends Component {
       } else {
         this.setState({ searchedMoviesResult: searchResult, search: value, error: "That search did not match any movies, please try again!"})
       }
-   }
+   };
 
    clearSearch = () => {
-     this.setState({ searchedMoviesResult: [], search: ""})
-   }
-
+     this.setState({ searchedMoviesResult: [], search: "" })
+   };
 
   render() {
     return (
@@ -63,7 +61,7 @@ class Form extends Component {
         </p>
       </form>
     )
-  }
-}
+  };
+};
 
 export default Form;
