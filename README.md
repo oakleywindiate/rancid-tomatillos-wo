@@ -32,14 +32,16 @@ The Rancid Tomatillos project teaches developers how to create interactive and f
 
 ### Gifs of Code in Action
 Gif #1- hovering over the movie and seeing the details, then clicking on the button
+![RT gif 1](https://user-images.githubusercontent.com/96502923/169914758-c189453c-7087-46a5-8356-bca45fcae1b5.gif)
 
 
 Gif #2- Looking at the movie details, then navigating back to home with the button
+![RT gif 2](https://user-images.githubusercontent.com/96502923/169914869-a2f2f0b6-a704-4821-b3df-56c705c3be4a.gif)
 
 
 Gif #3- Search a movie both in the database and one that is not to show error message.
+![RT gif 3](https://user-images.githubusercontent.com/96502923/169914949-b9d294bc-b901-47c6-8d45-7281cac944e3.gif)
 
-***
 
 ### Development Team
 
