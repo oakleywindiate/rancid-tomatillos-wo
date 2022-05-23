@@ -21,7 +21,7 @@ describe('Rancid Tomatillos search page view', () => {
   })
 
   it('Should be able to navigate to the movie details', () => {
-    cy.contains('Click here to see details!').click()
+    cy.contains('Click here to see details!').click( { force: true } )
     cy.intercept("GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', { fixture: 'movie.json' })
     cy.get('section.detail-tile')
       .should('exist')
@@ -34,7 +34,7 @@ describe('Rancid Tomatillos search page view', () => {
     cy.get("input")
       .type('money')
       .should('have.value', 'money')
-    cy.contains('Click here to see details!').click()
+    cy.contains('Click here to see details!').click( { force: true } )
     cy.contains('Go Back to All Movies').click()
     cy.get('div.movies-container').children()
       .should('have.length', 40)

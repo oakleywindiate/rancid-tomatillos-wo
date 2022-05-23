@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #000000;
+  background-color: #000;
   min-height: 20vh;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
 
 .title {
   font-family: 'Codystar', cursive;
-  color: #fff;
+  color: #FFF;
   text-shadow:
     0 0 2px #FFF,
     0 0 10px #FFF,

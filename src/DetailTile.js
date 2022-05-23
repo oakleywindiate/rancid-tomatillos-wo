@@ -36,7 +36,7 @@ class DetailTile extends Component {
               <p>Average Rating: {this.state.movieDetails.average_rating, new Intl.NumberFormat('en-US', {maximumFractionDigits: 2 }).format(this.state.movieDetails.average_rating)}</p>
               <p>Release Date: {this.state.movieDetails.release_date}</p>
               <p>{this.state.movieDetails.overview}</p>
-              <p>Genres:{this.state.movieDetails.genres}</p>
+              <p>Genres: {this.state.movieDetails.genres, new Intl.ListFormat('en-GB', { style: 'long', type: 'conjunction' }).format(this.state.movieDetails.genres)}</p>
               <p>Budget: {this.state.movieDetails.budget, new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(this.state.movieDetails.budget)}</p>
               <p>Revenue: {this.state.movieDetails.revenue, new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(this.state.movieDetails.revenue)}</p>
               <p>Runtime: {this.state.movieDetails.runtime} minutes</p>
