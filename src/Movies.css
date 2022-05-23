@@ -2,7 +2,8 @@
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  grid-gap: 20px;
+  grid-gap: 0px;
   background-color: #000000;
   color: white;
+  justify-content: space-around;
 }
